@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz - IAScore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#25005a",
+                    "secondary-fixed": "#aeecff",
+                    "on-surface": "#e4e1e9",
+                    "inverse-primary": "#732ee4",
+                    "surface": "#131318",
+                    "on-primary": "#3f008e",
+                    "on-tertiary-fixed-variant": "#454749",
+                    "on-primary-container": "#ede0ff",
+                    "on-secondary": "#003641",
+                    "surface-container-lowest": "#0e0e13",
+                    "tertiary": "#c6c6c8",
+                    "secondary": "#aeecff",
+                    "surface-variant": "#35343a",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#eaddff",
+                    "surface-tint": "#d2bbff",
+                    "tertiary-fixed": "#e2e2e4",
+                    "on-error": "#690005",
+                    "on-secondary-container": "#005b6c",
+                    "primary-fixed-dim": "#d2bbff",
+                    "inverse-on-surface": "#303036",
+                    "on-tertiary": "#2f3132",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#1f1f25",
+                    "on-background": "#e4e1e9",
+                    "on-secondary-fixed-variant": "#004e5d",
+                    "tertiary-container": "#656769",
+                    "secondary-container": "#00d9ff",
+                    "surface-container-low": "#1b1b20",
+                    "surface-dim": "#131318",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "background": "#131318",
+                    "on-tertiary-fixed": "#1a1c1d",
+                    "primary": "#d2bbff",
+                    "tertiary-fixed-dim": "#c6c6c8",
+                    "secondary-fixed-dim": "#00d9ff",
+                    "surface-container-highest": "#35343a",
+                    "inverse-surface": "#e4e1e9",
+                    "surface-container-high": "#2a292f",
+                    "on-surface-variant": "#ccc3d8",
+                    "primary-container": "#7c3aed",
+                    "outline-variant": "#4a4455",
+                    "error-container": "#93000a",
+                    "surface-bright": "#39383e",
+                    "on-secondary-fixed": "#001f26",
+                    "on-tertiary-container": "#e6e6e8",
+                    "outline": "#958da1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Space Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Space Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Space Grotesk"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Space Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0F;
+            color: #e4e1e9;
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed 0%, #00d9ff 100%);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid #26262E;
+            color: #9CA3AF;
+            transition: all 0.3s ease;
+        }
+        .btn-ghost:hover {
+            color: white;
+            border-color: #4a4455;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .input-dark {
+            background-color: #12121A;
+            border: 1px solid #26262E;
+            transition: all 0.3s ease;
+        }
+        .input-dark:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface/60 backdrop-blur-xl font-body-md text-body-md docked full-width top-0 border-b border-outline-variant/30 flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md font-bold tracking-tighter text-on-surface">
+            IAScore
+        </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Methodology</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Researchers</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Enterprise</a>
+</div>
+<div class="flex gap-stack-md items-center">
+<button class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200">AI-Powered</button>
+<button class="btn-primary px-4 py-2 rounded-lg font-medium text-sm">Start Assessment</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-margin-mobile md:px-margin-desktop relative">
+<!-- Abstract Background Element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Quiz Card -->
+<div class="w-full max-w-3xl bg-[#12121A] border border-[#26262E] rounded-2xl shadow-lg relative z-10 overflow-hidden flex flex-col">
+<!-- Progress Header -->
+<div class="p-stack-lg border-b border-[#26262E]">
+<div class="flex justify-between items-center mb-stack-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pregunta 2 de 5</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">40%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-[#26262E] rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[40%] rounded-full shadow-[0_0_10px_rgba(124,58,237,0.5)] transition-all duration-500"></div>
+</div>
+</div>
+<!-- Question Area -->
+<div class="p-stack-lg flex-grow flex flex-col gap-stack-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                    ¿Cómo influye el 'Temperature' en la variabilidad de las respuestas de un LLM?
+                </h1>
+<div class="flex-grow">
+<textarea aria-label="Respuesta a la pregunta" class="input-dark w-full h-48 rounded-[16px] p-stack-md text-on-surface placeholder:text-on-surface-variant/50 resize-none font-body-lg text-body-lg" placeholder="Escribí tu respuesta acá..."></textarea>
+</div>
+</div>
+<!-- Navigation Footer -->
+<div class="p-stack-lg border-t border-[#26262E] bg-[#1A1A24]/50 flex justify-end gap-stack-md">
+<button class="btn-ghost px-6 py-3 rounded-lg font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+                    Anterior
+                </button>
+<button class="btn-primary px-6 py-3 rounded-lg font-medium flex items-center gap-2">
+                    Siguiente
+                    <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface font-body-md text-body-md full-width border-t border-outline-variant/20 flat no shadows w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto mt-auto">
+<div class="font-display-lg text-headline-md font-bold text-on-surface">
+            IAScore
+        </div>
+<div class="flex flex-wrap justify-center gap-gutter">
+<a class="text-on-tertiary-fixed-variant hover:text-secondary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded" href="#">Privacy Policy</a>
+<a class="text-on-tertiary-fixed-variant hover:text-secondary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded" href="#">Terms of Service</a>
+<a class="text-on-tertiary-fixed-variant hover:text-secondary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded" href="#">API Documentation</a>
+<a class="text-on-tertiary-fixed-variant hover:text-secondary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded" href="#">Status</a>
+</div>
+<div class="text-on-surface-variant text-sm">
+            © 2024 IAScore. Precision Knowledge Engineering.
+        </div>
+</footer>
+</body></html>
