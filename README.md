@@ -2,7 +2,7 @@
 
 IAScore es una aplicación web que evalúa tus conocimientos en Inteligencia Artificial Generativa mediante un cuestionario de 5 preguntas abiertas. Utiliza un modelo LLM (via [Groq](https://groq.com/)) para analizar tus respuestas y brindarte feedback personalizado con puntaje, fortalezas, debilidades y recomendaciones.
 
-## ✨ Características
+## ✨ Caracteristicas
 
 - **Quiz interactivo** de 5 preguntas, mostradas de a una por vez con barra de progreso
 - **Evaluación con IA** usando el modelo Llama 3.3 70B via Groq (ultrarrápido)
